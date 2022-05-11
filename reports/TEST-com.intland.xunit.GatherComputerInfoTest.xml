@@ -1,0 +1,22 @@
+Which solutions / technology are supported out-of-the-box / with 3rd party components for 
+
+1) API development - if we want to develop our own APIs
+
+Generally we advise to use the existing REST / Swagger API.
+Extending the REST API is possible using Java-based extensions implemented based on our internal Java API.
+
+
+2) API consumption - if we want to consume remote APIs e.g. update requirements or add links to other systems.
+
+Using the OSLC connector developed by our partner Mid could be the best option for this use case considering Teamcenter does support OSLC too.
+Alternatively a custom integration could be developed using the Widget API (will be released with Felicity in April).
+The widget API enables adding custom UI elements to the item details and document side-panel (and to many more locations in future).
+Widgets can be built as a microservice using the technology-stack of your choice, that means you can use whatever technology you prefer to use to consume the remote API.
+
+ 
+
+3) API requests - if we want to post data to remote systems.
+
+Principally you can do that in codebeamer using Java code using additional libraries if necessary.
+This can make sense if what you are trying to do is not very complex and is triggered from a Workflow Action or Listener.
+If what you are trying to do is complex it could make sense to extract that into a microservice that will be called from codebeamer.
